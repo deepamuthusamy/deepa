@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - yum update -y
+      - yum install -y java-1.8.0 maven
+  build:
+    commands:
+      - mvn clean package
+artifacts:
+  files:
+    - target/*.war
+    - appspec.yml
+    - scripts/**
